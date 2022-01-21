@@ -9,36 +9,51 @@
     {{/each}}
 </ul> --}}
 
-<table>
-  <thead>
-    <tr>
-      <th>N°</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Operations</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each tasksp}}
+{{#if tasksp}}
+  <table class="table table-bordered table-hover table-dark">
+    <thead>
       <tr>
-        <td
-        >{{@index}}</td>{{! con @index se recorre la base de datos completa uno a uno }}
-        <td
-        >{{title}}</td>{{! se muestra la proiedad title del elemento que estoy recorriendo en la base de datos  }}
-        <td>{{description}}</td>
-        <td>
-          {{#if done}}
-            <a href="/tasks/{{_id}}/toggledone">Undone</a>
-          {{else}}
-            <a href="/tasks/{{_id}}/toggledone">Done</a>
-          {{/if}}
-          <a href="/tasks/{{_id}}/delete">Delete</a>
-          <a href="/tasks/{{_id}}/edit">Update</a>
-          {{!--con el {{_id}} paso en la url el id del elemento sobre el que hago click --}}
-          {{! el id lo paso para saber que elemento de la bd tengo que modificar }}
-        </td>
+        <th>N°</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Operations</th>
       </tr>
-    {{/each}}
-  </tbody>
+    </thead>
+    <tbody>
+      {{#each tasksp}}
+        <tr>
+          <td
+          >{{@index}}</td>{{! con @index se recorre la base de datos completa uno a uno }}
+          <td
+          >{{title}}</td>{{! se muestra la proiedad title del elemento que estoy recorriendo en la base de datos  }}
+          <td>{{description}}</td>
+          <td>
+            {{#if done}}
+              <a
+                href="/tasks/{{_id}}/toggledone"
+                class="btn btn-dark"
+              >Undone</a>
+            {{else}}
+              <a
+                href="/tasks/{{_id}}/toggledone"
+                class="btn btn-success"
+              >Done</a>
+            {{/if}}
+            <a href="/tasks/{{_id}}/delete" class="btn btn-danger">Delete</a>
+            <a href="/tasks/{{_id}}/edit" class="btn btn-info">Update</a>
+            {{!--con el {{_id}} paso en la url el id del elemento sobre el que hago click --}}
+            {{! el id lo paso para saber que elemento de la bd tengo que modificar }}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class="h-100 d-flex align-items-center justify-content center">
+    <div class="text-center text-white">
+      <h1>No Tasks</h1>
+      <img src="/icons/empty.png" class="w-75" />
+    </div>
+  </div>
 
-</table>
+{{/if}}

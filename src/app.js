@@ -8,6 +8,7 @@ import indexRoutes from './routes/index.routes'//en caso de no ser una funcion p
                                     // cualquier otro modulo 
 import path from 'path'//modulo para usar rutas independientemente de la plataforma, windows, linux, etc
 import morgan from 'morgan'//middleware que permite ver las peticiones que se estan realizando
+import exp from 'constants';
 const app = express()
 
 app.set('views',path.join(__dirname,'views'))//se puede usar directamente __dirname pero suele dar problemas entre plataformas
@@ -43,4 +44,7 @@ app.use(express.urlencoded({extended: false}))//este middleware se usa para que 
 // Routes
 app.use(indexRoutes)//de esta forma express usa lo que se esta importando como indexRoutes
 
+
+//static files
+app.use(express.static(path.join(__dirname, "public")))
 export default app
