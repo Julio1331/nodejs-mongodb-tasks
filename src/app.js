@@ -4,7 +4,7 @@ import express from 'express';//iporta express para levantar el servidor
 import {create} from "express-handlebars";
 // import exphbs from 'express-handlebars'//importo el modulo para poder configurarlo, como hay 
                                     //varios motores de plantillas se debe importar y configurar el que se va a usar, en este caso hadlebars
-import indexRoutes from './routes/index.routes;'//en caso de no ser una funcion propia de express o
+import indexRoutes from './routes/index.routes';//en caso de no ser una funcion propia de express o
                                     // cualquier otro modulo 
 import path from 'path';//modulo para usar rutas independientemente de la plataforma, windows, linux, etc
 import morgan from 'morgan';//middleware que permite ver las peticiones que se estan realizando
