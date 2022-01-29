@@ -8,6 +8,9 @@ export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017
 //tambien se puede exportar el puerto y asi dejar url y puerto de conexion ocultos
 // export const PORT = process.env.PORT || 3000; de esta forma va el oculto y uno por defecto
 
+export const PORT = process.env.PORT || 3000;//esta linea se agrego en la etapa de despliegue porque heroku asigna un puerto
+//y si se fuerza al 3000 la app no funciona
+
 //este archivo de configuracion se utiliza para usar variables de entorno
 //cuando se sube el proyecto a github por ejemplo y queda como publico, por seguridad las rutas de las
 //bases de datos no se suben porque sino cualquiera que tenga acceso al repositorio tiene acceso a la base de datos
