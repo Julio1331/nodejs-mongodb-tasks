@@ -1,7 +1,7 @@
 import { connect } from 'mongoose'
 import { MONGODB_URI } from './config'
 
-console.log("ESTA ES MONGODB_URI: ",MONGODB_URI);//en este caso si o si tiene que llevar el ; porque sino lo considera como
+//console.log("ESTA ES MONGODB_URI: ",MONGODB_URI);//en este caso si o si tiene que llevar el ; porque sino lo considera como
 //nombre de la funcion asyncrona que sigue
 
 (async () => {

@@ -2,8 +2,8 @@ import { config } from 'dotenv'
 config();
 
 
-//export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/crud-mongo'//el o condicional esta 
-export const MONGODB_URI = "mongodb+srv://juliobdmongo:jbdmongo34&%@cluster0.9ejth.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/test'//el o condicional esta 
+//export const MONGODB_URI = "mongodb+srv://juliobdmongo:jbdmongo34&%@cluster0.9ejth.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //para que cuando MONGODB_URI no tenga arguemnto o no exista se conexte a otra bd por defecto, en este caso es la
 //misma crud-mongo, pero la funcion seria esa
 //tambien se puede exportar el puerto y asi dejar url y puerto de conexion ocultos
