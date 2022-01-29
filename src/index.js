@@ -1,6 +1,6 @@
 //este archivo corresponde al arranque de la aplicacion 
-import app from './app'//acá está importando la configuración de la aplicación
-import './database'
+import app from './app';//acá está importando la configuración de la aplicación
+import './database';
 import {PORT} from "./config";
 
 app.listen(PORT);//estas dos lineas fueron agregadas en etapa de despliegue porque el PORT lo define heroku

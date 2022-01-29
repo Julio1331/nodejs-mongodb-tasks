@@ -1,17 +1,17 @@
 //este archivo se encarga de la configuracion de la aplicacion 
 
-import express from 'express'//iporta express para levantar el servidor
+import express from 'express';//iporta express para levantar el servidor
 import {create} from "express-handlebars";
 // import exphbs from 'express-handlebars'//importo el modulo para poder configurarlo, como hay 
                                     //varios motores de plantillas se debe importar y configurar el que se va a usar, en este caso hadlebars
-import indexRoutes from './routes/index.routes'//en caso de no ser una funcion propia de express o
+import indexRoutes from './routes/index.routes;'//en caso de no ser una funcion propia de express o
                                     // cualquier otro modulo 
-import path from 'path'//modulo para usar rutas independientemente de la plataforma, windows, linux, etc
-import morgan from 'morgan'//middleware que permite ver las peticiones que se estan realizando
+import path from 'path';//modulo para usar rutas independientemente de la plataforma, windows, linux, etc
+import morgan from 'morgan';//middleware que permite ver las peticiones que se estan realizando
 import exp from 'constants';
-const app = express()
+const app = express();
 
-app.set('views',path.join(__dirname,'views'))//se puede usar directamente __dirname pero suele dar problemas entre plataformas
+app.set('views',path.join(__dirname,'views'));//se puede usar directamente __dirname pero suele dar problemas entre plataformas
                 // por eso se recomienda usar el modulo path incluido en express
                 //Lo que se hace en esa linea es setear una propiedad en app la cual se llama views 
                 //y lo que tiene adentro es la ruta de la carpeta views 
@@ -37,14 +37,14 @@ app.engine(".hbs", exphbs.engine);
 app.set("view engine", ".hbs");
 
 //middlewares
-app.use(morgan('dev'))//este codigo muestra en consola la peticion realizada, la respuesta y el tiempo
-app.use(express.urlencoded({extended: false}))//este middleware se usa para que los datos enviados por 
+app.use(morgan('dev'));//este codigo muestra en consola la peticion realizada, la respuesta y el tiempo
+app.use(express.urlencoded({extended: false}));//este middleware se usa para que los datos enviados por 
                         //POST puedan ser convertidos a json
 
 // Routes
-app.use(indexRoutes)//de esta forma express usa lo que se esta importando como indexRoutes
+app.use(indexRoutes);//de esta forma express usa lo que se esta importando como indexRoutes
 
 
 //static files
-app.use(express.static(path.join(__dirname, "public")))
-export default app
+app.use(express.static(path.join(__dirname, "public")));
+export default app;

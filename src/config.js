@@ -1,8 +1,8 @@
-import { config } from 'dotenv'
+import { config } from 'dotenv';
 config();
 
 
-export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/test'//el o condicional esta 
+export const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/test';//el o condicional esta 
 //export const MONGODB_URI = "mongodb+srv://juliobdmongo:jbdmongo34&%@cluster0.9ejth.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //para que cuando MONGODB_URI no tenga arguemnto o no exista se conexte a otra bd por defecto, en este caso es la
 //misma crud-mongo, pero la funcion seria esa
